@@ -23,6 +23,8 @@ function displayBooks(response){
         $li.append('<p><em>' +book.author +'</em></p>');
         var date=new Date(book.published);
         $li.append('<p><time>'+date.toDateString()+'</time></p>');
+        $li.append('<p><em>' +book.edition +'</em></p>');
+        $li.append('<p><em>' +book.publisher +'</em></p>');
         $('#book-list').append($li);
 
     });

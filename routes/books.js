@@ -9,6 +9,7 @@ var config ={       //to access database
 var pool = new pg.Pool(config);
 
 router.post('/', function(req, res){
+    console.log(req.body);
 
     pool.connect(function(err, client, done){
         if(err){
@@ -18,7 +19,7 @@ router.post('/', function(req, res){
             return;
         }
 //creating new row into the table , $1 - placeholder for the paramaters // returning all
-        client.query('INSERT INTO books (author, title, published) VALUES ($1, $2,$3) returning *;', [req.body.author, req.body.title, req.body.published],  function(err, result){
+        client.query('INSERT INTO books (author, title, published, edition, publisher) VALUES ($1, $2, $3, $4, $5) returning *;', [req.body.author, req.body.title, req.body.published, req.body.edition, req.body.publisher],  function(err, result){
             done();
             if(err){
                 console.log('Error connecting to the DB', err);

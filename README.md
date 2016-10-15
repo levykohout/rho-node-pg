@@ -1,9 +1,11 @@
-# Node & Postgres Lecture
+# Node & Postgres Exercise
 
-## Takeaways
+## Description
 
-* You can connect to your Postgres database using the `pg` module
-* You need to know the name of the database (see `config` in server/routes/books.js)
-* Use `pool.connect(...)` to connect to the database
-* Use `client.query(...)` to query the database with SQL
-* When creating queries with client-submitted data, always use the prepared statement pattern (see router.post in server/routes/books.js)
+This is an exercise to practice what we learned on Node and Postgres lecture.
+
+## System Requirements
+
+* Postico installed
+* Installed Postgres with homebrew
+* Postgres currently running in computer
